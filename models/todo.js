@@ -35,15 +35,11 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     static async overdue() {
-      // FILL IN HERE TO RETURN OVERDUE ITEMS
-      return Todo.findAll({
+      return await Todo.findAll({
         where: {
-          [Op.and]: [{
-            dueDate: {
-              [Op.lt]: new Date()
-            }
+          dueDate: {
+            [Op.lt]: new Date(),
           },
-          { completed: false }]
         },
         order: [["id", "ASC"]],
       });
