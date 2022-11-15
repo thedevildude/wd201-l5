@@ -46,7 +46,6 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     static async dueToday() {
-      // FILL IN HERE TO RETURN ITEMS DUE tODAY
       return Todo.findAll({
         where: {
           dueDate: {
@@ -58,7 +57,6 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     static async dueLater() {
-      // FILL IN HERE TO RETURN ITEMS DUE LATER
       return Todo.findAll({
         where: {
           dueDate: {
@@ -70,7 +68,6 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     static async markAsComplete(id) {
-      // FILL IN HERE TO MARK AN ITEM AS COMPLETE
       return Todo.update(
         { completed: true },
         {
